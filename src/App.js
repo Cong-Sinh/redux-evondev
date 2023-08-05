@@ -1,18 +1,14 @@
-import { useSelector } from "react-redux";
-import Card from "./components/Card";
-import Counter from "./components/Counter";
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import HackerNews from "./components/HackerNews";
+import { getNews } from "./sagas/news/newsSlice";
+// redux saga architecture
 function App() {
-  const globalOptions = useSelector((state) => state.global);
-  console.log("App ~ globalOptions", globalOptions);
-  // const handleToggleDarkmode = () => {
-  //   dispatch(toggleDarkMode(true));
-  // };
-
+  // const hits = useSelector((state) => state.news.hits);
+  // console.log("App ~ hits", hits);
   return (
     <div>
-      <Card></Card>
-      <Counter></Counter>
+      <HackerNews></HackerNews>
     </div>
   );
 }
